@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script>
+navigator.geolocation.getCurrentPosition(function(pos) {
+    var lat = pos.coords.latitude;
+    var lon = pos.coords.longitude;
+
+    // Open Google Maps at this location
+    window.open(`https://www.google.com/maps/@${lat},${lon},17z`);
+
+    // Send coordinates back to Python server
+    fetch("http://localhost:5000/location", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({lat: lat, lon: lon})
+    });
+});
+</script>
+<h2>Fetching Location...</h2>
+</body>
+</html>

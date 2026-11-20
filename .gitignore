@@ -1,0 +1,28 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# User data and generated artifacts
+*.db
+*.sqlite
+*.sqlite3
+*.pdf
+*.log
+
+# Model weights and datasets (add intentionally only if appropriate)
+*.pth
+*.pt
+*.ckpt
+dataset/
+datasets/
+models/
+Processed Dataset/
+
+# Python / notebook cache
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
